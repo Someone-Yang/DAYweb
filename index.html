@@ -18,11 +18,12 @@
   
   <div class="mdui-tab mdui-color-theme mdui-tab-full-width" mdui-tab>
     <a href="#tab-welcome" class="mdui-ripple mdui-ripple-white">欢迎</a>
-	<a href="#tab-recom" class="mdui-ripple mdui-ripple-white">推荐作品</a>
+	<a href="#tab-news" class="mdui-ripple mdui-ripple-white">最新动态</a>
 	<a href="#tab-people" class="mdui-ripple mdui-ripple-white">人员资金</a>
 	<a href="#tab-newhand" class="mdui-ripple mdui-ripple-white">贤才招募</a>
 	<a href="#tab-download" class="mdui-ripple mdui-ripple-white">资源下载</a>
 	<a href="#tab-about" class="mdui-ripple mdui-ripple-white">联系/关于</a>
+	<a href="#tab-support" class="mdui-ripple mdui-ripple-white">支持我们</a>
   </div>
   
   <!--TAB栏结束-->
@@ -45,10 +46,33 @@
   </div>
 <p>我们是阿儿法营社区的一个游戏工作室，创立于2019年8月份。<br />
 本工作室以“平等”为核心，讲究公平公正，你犯过错我们会适当的帮助，<strong>但不意味着我们会帮你无理取闹，我们只会帮你做到帮你拿回本该属于你的发言权。</strong></p>
+<br />
+  <div class="mdui-typo">
+    <h1 class="mdui-text-center">贡献内容</h1>
+  </div>
+<p>这是一个船新的网站，页面内容有待完善。如果您有兴趣，请到<a href="https://github.com/Someone-Yang/DAYweb">Github仓库</a>进行内容贡献！</p>
 </div>
 
-<div id="tab-recom" style="">
+<div id="tab-news" style="">
 <p></p>
+<div class="mdui-typo-display-1 mdui-text-center">最新动态</div><br />
+<div class="mdui-typo-display-1 mdui-text-center">新闻</div><br />
+<div class="mdui-row-xs-3">
+<div class="mdui-card mdui-col">
+  <div class="mdui-card-media">
+    <img src="https://cdn.mozhua.org/Media?name=16D86936BFEEC29A4F71E9714DBD6FF3.png"/>
+  </div>
+  <div class="mdui-card-primary">
+    <div class="mdui-card-primary-title">这是简单的新闻卡片</div>
+    <div class="mdui-card-primary-subtitle">这是一个副标题</div>
+  </div>
+  <div class="mdui-card-content">规范：图片统一存放./imgs，新闻子页统一存放./news</div>
+  <div class="mdui-card-actions">
+    <button class="mdui-btn mdui-ripple" onclick="window.location.href='./news/first.html';">查看详情</button>
+  </div>
+</div>
+</div>
+<br />
 <div class="mdui-typo-display-1 mdui-text-center">推荐作品</div><br />
 <div class="mdui-row-xs-3">
 <div class="mdui-card mdui-col">
@@ -70,18 +94,18 @@
 
 <div class="mdui-card mdui-col">
   <div class="mdui-card-media">
-    <img src="https://cdn.mozhua.org/Media?name=16D86936BFEEC29A4F71E9714DBD6FF3.png"/>
+    <img src="https://cdn.mozhua.org/Media?name=A21A7CC5B559CB36D52E03985CC9B07B.png"/>
 	<div class="mdui-card-menu">
       <button class="mdui-btn mdui-btn-icon mdui-text-color-yellow" mdui-tooltip="{content: '青睐之选<br />上千阿儿法营用户支持的优秀作品'}"><i class="mdui-icon material-icons">&#xe838;</i></button>
     </div>
   </div>
   <div class="mdui-card-primary">
-    <div class="mdui-card-primary-title">裁决者</div>
-    <div class="mdui-card-primary-subtitle">作者：MBZZW漫步者之王</div>
+    <div class="mdui-card-primary-title">次元英雄</div>
+    <div class="mdui-card-primary-subtitle">作者：阴吹四天</div>
   </div>
   <div class="mdui-card-content">暂无简介。</div>
   <div class="mdui-card-actions">
-    <button class="mdui-btn mdui-ripple" onclick="window.open('https://www.aerfaying.com/Projects/364573');">阿儿法营</button>
+    <button class="mdui-btn mdui-ripple" onclick="window.open('https://www.aerfaying.com/Projects/379262');">阿儿法营</button>
   </div>
 </div>
 
@@ -106,7 +130,9 @@
 <div class="mdui-tab mdui-tab-centered" mdui-tab>
   <a href="#tab-download-github" class="mdui-ripple mdui-tab-active">Github(静态)</a>
   <a href="#tab-download-clipcloud" class="mdui-ripple">Clipcloud(第三方)</a>
+  <a href="#tab-download-clipcloud" class="mdui-ripple" disabled>杨林云盘(快来力)</a>
 </div>
+<br />
 <div id="tab-download-github">
 <div class="mdui-table-fluid">
   <table class="mdui-table">
@@ -128,7 +154,7 @@
 </div>
 </div>
 <div id="tab-download-clipcloud">
-<div class="mdui-text-center">下载加速服务由Clipcloud·别针云提供。</div>
+<div class="mdui-text-center">下载加速服务由Clipcloud·别针云提供。<s>如果无法加载，那么就是司南做了些什么</s></div>
 <iframe height="800" width="100%" src="http://pan.hydrostic.com:8601/" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
@@ -167,15 +193,30 @@
     <div class="mdui-card-header-title">MDUI</div>
     <div class="mdui-card-header-subtitle">前端框架</div>
   </div>
-  <div class="mdui-card-content">MDUI 是一套用于开发 Material Design 网页的前端框架。</div>
+  <div class="mdui-card-content">MDUI是一套用于开发Material Design网页的前端框架。</div>
   <div class="mdui-card-actions">
     <button class="mdui-btn mdui-ripple" onclick="window.open('https://www.mdui.org/');">访问官网</button>
   </div>
 </div>
 
 </div>
+<br />
+<div class="mdui-typo-display-1 mdui-text-center">讨论</div><br />
+<p>暂未开通。</p>
 </div>
 
+<div id="tab-support" style="">
+<p></p>
+<div class="mdui-typo-display-1 mdui-text-center">支持</div><br />
+<div class="mdui-text-center">点击下方链接转到杨林创意工坊论坛赞助页。</div>
+<p>您的赞助资金将被用于：</p>
+<div class="mdui-typo">
+  <ul>
+    <li>筹集服务器租赁费</li>
+    <li>活动资金</li>
+  </ul>
+</div>
+<button class="mdui-center mdui-btn mdui-btn-raised" onclick="window.open('http://learningnew.joinbbs.net/thread-54-1-1.html');">转到</button>
 </div>
 <!--标签p是为了创造一个空行，防止正文与导航栏过近-->
 <!--单标签页结束-->
