@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="./css/mdui.min.css">
 <script src="./js/mdui.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <!-- Vssue 的样式文件 -->
+  <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
 <title>DAY工作室官网</title>
 </head>
 <body class="mdui-theme-primary-indigo">
@@ -204,22 +204,31 @@
 </div>
 <br />
 <div class="mdui-typo-display-1 mdui-text-center">讨论</div><br />
-<div class="mdui-text-center">请使用Github登录，授权yang某人的第三方服务(DAYweb)以连接Github Repo，否则将无法正常拉取信息。<br />此处使用组件：Gitalk</div><br />
+<div class="mdui-text-center">请使用Github登录，授权yang某人的第三方服务(DAYweb)以连接Github Repo，否则将无法正常拉取信息。</div><br />
   <!--讨论-->
-<div id="gitalk-container"></div>
+<script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
+<script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
 <script>
-var gitalk = new Gitalk({
-  clientID: '59a7c18671433d2f0164',
-  clientSecret: '7ba89f8b00259c7bfa43fc92695de4e9c8c57814',
-  repo: 'DAYdiscuss',
-  owner: 'Someone-Yang',
-  admin: ['CHRiceRice','Someone-Yang'],
-  id: location.pathname,      // Ensure uniqueness and length less than 50
-  distractionFreeMode: false  // Facebook-like distraction free mode
-})
+    new Vue({
+      el: '#vssue',
 
-gitalk.render('gitalk-container')
-</script>
+      render: h => h('Vssue', {
+        props: {
+          // 在这里设置当前页面对应的 Issue 标题
+          title: 'mainpagetalk',
+
+          // 在这里设置你使用的平台的 OAuth App 配置
+          options: {
+            owner: 'Someone-Yang',
+            repo: 'DAYdiscuss',
+            clientId: '59a7c18671433d2f0164',
+            clientSecret: '7ba89f8b00259c7bfa43fc92695de4e9c8c57814', // 只有在使用某些平台时需要
+          },
+        }
+      })
+    })
+  </script>
+
 </div>
 
 <div id="tab-support" style="">
