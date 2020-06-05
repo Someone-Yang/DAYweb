@@ -7,7 +7,11 @@
   <script src="./js/mdui.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <link rel="stylesheet" href="./css/check.css">
+    <script type="text/javascript" src="./js/check.js"></script>
+	  <script src="./js/talkcheck.js"></script>
   <title>DAY工作室官网</title>
+
 </head>
 
 <body class="mdui-theme-primary-indigo">
@@ -241,23 +245,12 @@
       </div>
       <br />
       <div class="mdui-typo-display-1 mdui-text-center">讨论</div><br />
-      <div class="mdui-text-center">请使用Github登录，授权yang某人的第三方服务(DAYweb)以连接Github Repo，否则将无法正常拉取信息。<br />此处使用组件：Gitalk
+      <div class="mdui-text-center">请使用Github登录，授权yang某人的第三方服务(DAYweb)以连接Github Repo，否则将无法正常拉取信息。<br />还有，请您点击下方按钮开始验证，完成后即可加载。
       </div><br />
+	<button id="checkbtn" class="mdui-btn mdui-btn-raised" style="left: 47%" onclick="startcheck();">验证</button>
       <!--讨论-->
+	  <div id="checkdiv" style="left: 47%"></div>
       <div id="gitalk-container"></div>
-      <script>
-        var gitalk = new Gitalk({
-          clientID: '59a7c18671433d2f0164',
-          clientSecret: '7ba89f8b00259c7bfa43fc92695de4e9c8c57814',
-          repo: 'DAYdiscuss',
-          owner: 'Someone-Yang',
-          admin: ['CHRiceRice', 'Someone-Yang'],
-          id: location.pathname,      // Ensure uniqueness and length less than 50
-          distractionFreeMode: false  // Facebook-like distraction free mode
-        })
-
-        gitalk.render('gitalk-container')
-      </script>
     </div>
 
     <div id="tab-support" style="">
