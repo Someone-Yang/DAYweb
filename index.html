@@ -6,6 +6,8 @@
   <title>DAY工作室官网</title>
   <link rel="stylesheet" href="./css/mdui.min.css">
   <script src="./js/mdui.min.js"></script>
+  <!--船新的Vue，不要删除-->
+  <script src="./js/vue.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <link rel="stylesheet" href="./css/check.css">
@@ -66,82 +68,41 @@
       <div class="mdui-typo-display-1 mdui-text-center">最新动态</div><br />
       <div class="mdui-typo-display-1 mdui-text-center">新闻</div><br />
       <div class="mdui-row-xs-3">
-        <div class="mdui-card mdui-col">
+        <div id="newsc1" class="mdui-card mdui-col">
           <div class="mdui-card-media">
-            <img src="https://cdn.mozhua.org/Media?name=16D86936BFEEC29A4F71E9714DBD6FF3.png" />
+            <img v-bind:src="media" />
           </div>
           <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">这是简单的新闻卡片</div>
-            <div class="mdui-card-primary-subtitle">这是一个副标题</div>
+            <div class="mdui-card-primary-title">{{ title }}</div>
+            <div class="mdui-card-primary-subtitle">{{ subtitle }}</div>
           </div>
-          <div class="mdui-card-content">规范：图片统一存放./imgs，新闻子页统一存放./news</div>
+          <div class="mdui-card-content"><span v-html="destext"></span></div>
           <div class="mdui-card-actions">
-            <button class="mdui-btn mdui-ripple" onclick="window.location.href='./news/first.html';">查看详情</button>
+            <button class="mdui-btn mdui-ripple" v-bind:onclick="btn_click">{{ btn_text }}</button>
           </div>
         </div>
       </div>
       <br />
       <div class="mdui-typo-display-1 mdui-text-center">推荐作品</div><br />
       <div class="mdui-row-xs-3">
-        <div class="mdui-card mdui-col">
+	  
+        <div id="sharec1" class="mdui-card mdui-col">
           <div class="mdui-card-media">
-            <img src="https://cdn.mozhua.org/Media?name=89303DA91F8D91288ED7452A1A3993C2.png" />
+            <img v-bind:src="media" />
             <div class="mdui-card-menu">
-              <button class="mdui-btn mdui-btn-icon mdui-text-color-yellow"
-                mdui-tooltip="{content: '青睐之选<br />上千阿儿法营用户支持的优秀作品'}"><i
-                  class="mdui-icon material-icons">&#xe838;</i></button>
+              <button class="mdui-btn mdui-btn-icon mdui-text-color-yellow" mdui-tooltip="{content: '青睐之选<br />上千阿儿法营用户支持的优秀作品'}"><i class="mdui-icon material-icons">&#xe838;</i></button>
             </div>
           </div>
           <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">裁决者</div>
-            <div class="mdui-card-primary-subtitle">作者：MBZZW漫步者之王</div>
+            <div class="mdui-card-primary-title">{{ title }}</div>
+            <div class="mdui-card-primary-subtitle">{{ subtitle }}</div>
           </div>
           <div class="mdui-card-content">
-            类型：第一人称平面狙击游戏<br />主要玩法：根据任务指示，狙杀所有敌人或指定敌人<br />游戏特色：枪械种类较丰富，弹药种类丰富，可装载不同弹药，有弹道系统，效果很赞的后坐力表现，卡壳等故障系统<br />进度：<br />武器已完成，可能会新增<br />贴图基本完成，后续关卡会增加<br />游戏机制基本完成
+            <span v-html="destext"></span>
           </div>
           <div class="mdui-card-actions">
             <button class="mdui-btn mdui-ripple"
-              onclick="window.open('https://www.aerfaying.com/Projects/364573');">阿儿法营</button>
-          </div>
-        </div>
-
-        <div class="mdui-card mdui-col">
-          <div class="mdui-card-media">
-            <img src="https://cdn.mozhua.org/Media?name=A21A7CC5B559CB36D52E03985CC9B07B.png" />
-            <div class="mdui-card-menu">
-              <button class="mdui-btn mdui-btn-icon mdui-text-color-yellow"
-                mdui-tooltip="{content: '青睐之选<br />上千阿儿法营用户支持的优秀作品'}"><i
-                  class="mdui-icon material-icons">&#xe838;</i></button>
-            </div>
-          </div>
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">次元英雄</div>
-            <div class="mdui-card-primary-subtitle">作者：阴吹四天</div>
-          </div>
-          <div class="mdui-card-content">暂无简介。</div>
-          <div class="mdui-card-actions">
-            <button class="mdui-btn mdui-ripple"
-              onclick="window.open('https://www.aerfaying.com/Projects/379262');">阿儿法营</button>
-          </div>
-
-        </div>
-        <div class="mdui-card mdui-col">
-          <div class="mdui-card-media">
-            <img src="https://cdn.mozhua.org/Media?name=9A1B4551278DEE7CA8BA9EBA84259BF1.png" />
-            <div class="mdui-card-menu">
-              <button class="mdui-btn mdui-btn-icon mdui-text-color-yellow"
-                mdui-tooltip="{content: '青睐之选<br />上千阿儿法营用户支持的优秀作品'}"><i
-                  class="mdui-icon material-icons">&#xe838;</i></button>
-            </div>
-          </div>
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">「暴政 Heresy」</div>
-            <div class="mdui-card-primary-subtitle">作者：滑稽天下</div>
-          </div>
-          <div class="mdui-card-content">暂无简介。</div>
-          <div class="mdui-card-actions">
-            <button class="mdui-btn mdui-ripple"
-              onclick="window.open('https://www.aerfaying.com/Projects/393773');">阿儿法营</button>
+              v-bind:onclick="btn_click">{{ btn_text }}</button>
           </div>
         </div>
 
@@ -240,6 +201,18 @@
             <button class="mdui-btn mdui-ripple" onclick="window.open('https://www.mdui.org/');">访问官网</button>
           </div>
         </div>
+		
+		<div class="mdui-card mdui-col">
+          <div class="mdui-card-header">
+            <i class="mdui-icon material-icons mdui-card-header-avatar">&#xe869;</i>
+            <div class="mdui-card-header-title">Vue.js</div>
+            <div class="mdui-card-header-subtitle">前端框架(?</div>
+          </div>
+          <div class="mdui-card-content">Vue是一套用于构建用户界面的渐进式框架。</div>
+          <div class="mdui-card-actions">
+            <button class="mdui-btn mdui-ripple" onclick="window.open('https://cn.vuejs.org/');">访问官网</button>
+          </div>
+        </div>
 
       </div>
       <br />
@@ -263,5 +236,7 @@
     timeout: 6000
   });
 </script>
+
+  <script src="./js/vue-set.js"></script>
 
 </html>
